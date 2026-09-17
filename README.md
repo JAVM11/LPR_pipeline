@@ -7,11 +7,11 @@ Pipeline LPR para imágenes y vídeo. Detecta vehículos con YOLO COCO, busca la
 ### Clonar
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/JAVM11/LPR_pipeline.git
 cd LPR_pipeline
 ```
 
-Se requieren los pesos locales `Modelos/yolov8n.pt` (vehículos COCO) y `Modelos/placa2.pt` (placa, clase `0`).
+Se requieren los pesos locales `Modelos/yolov8n.pt` (vehículos COCO) y `Modelos/plate.pt` (placa, clase `0`).
 
 ### GPU NVIDIA — recomendado
 
