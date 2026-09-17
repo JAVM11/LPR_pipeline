@@ -1,0 +1,32 @@
+services:
+  lpr:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lpr-pipeline:runtime
+    platform: linux/amd64
+    init: true
+    environment:
+      INFERENCE_DEVICE: ${INFERENCE_DEVICE:-auto}
+    volumes:
+      - type: bind
+        source: ./Modelos
+        target: /models
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./assets
+        target: /assets
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${LPR_INPUT_DIR:-./assets}
+        target: /inputs
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${LPR_RESULTS_DIR:-./results/docker}
+        target: /results

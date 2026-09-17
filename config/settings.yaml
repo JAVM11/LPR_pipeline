@@ -1,0 +1,26 @@
+# Configuración del Pipeline LPR
+
+pipeline:
+  confidence_threshold: 0.5
+  device: "cpu"  # o "cuda:0"
+
+models:
+  vehicle_detector:
+    name: "yolov8n.pt"
+    classes: ["car", "motorcycle", "bus", "truck"]
+
+  plate_detector:
+    name: "yolov8n.pt"  # Reemplazar con modelo fine-tuned o con algun modelo custom del usuario
+
+  ocr:
+    name: "cct-s-v2-global-model"
+    # Opciones: cct-s-v2-global-model, cct-s-v2-eu-model, cct-s-v2-us-model
+
+tracking:
+  max_age: 30
+  min_hits: 3
+
+output:
+  save_csv: true
+  save_json: true
+  draw_bbox: true

@@ -1,0 +1,10 @@
+# Sólo código y lock entran en el contexto. No pesos, imágenes, resultados ni secretos.
+**
+!Dockerfile
+!requirements-docker.lock
+!src/
+!src/**
+!scripts/
+!scripts/**
+**/__pycache__/
+**/*.pyc

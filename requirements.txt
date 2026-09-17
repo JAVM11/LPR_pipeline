@@ -1,0 +1,31 @@
+# Core
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# Detección de objetos - YOLOv8
+ultralytics==8.4.152
+torch==2.9.1
+torchvision==0.24.1
+# Necesario para cargar el checkpoint local Modelos/placa2.pt
+omegaconf==2.3.0
+
+# OCR de placas - Fast-Plate-OCR
+# Incluye ONNX Runtime para inferencia optimizada
+fast-plate-ocr==1.1.0
+onnxruntime-gpu==1.22.0
+
+# Tracking (opcional, para video)
+filterpy>=1.4.5  # Dependencia de SORT
+scipy>=1.10.0
+
+# Utilidades
+pyyaml>=6.0.1
+tqdm>=4.65.0
+python-box>=7.0.0  # Para config
+
+# Visualización
+matplotlib>=3.7.0
+
+# Export/Deployment
+onnx>=1.14.0  # Para exportar modelos
