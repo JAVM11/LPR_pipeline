@@ -1,6 +1,28 @@
 # License Plate Recognition Pipeline
 
-Pipeline LPR para imágenes y vídeo. Detecta vehículos con YOLO COCO, busca la placa dentro de cada vehículo con un modelo YOLO especializado y la lee con Fast-Plate-OCR. Los scripts guardan la imagen anotada y resultados estructurados; en vídeo conservan el seguimiento por vehículo.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Edge AI](https://img.shields.io/badge/Edge_AI-32CD32?style=for-the-badge&logo=nvidia&logoColor=black)
+
+Pipeline LPR de alto rendimiento para imágenes y vídeo. Detecta vehículos utilizando YOLO COCO, localiza la placa con un modelo YOLO especializado y extrae los caracteres en tiempo real con Fast-Plate-OCR. Diseñado para inferencia de baja latencia, exporta imágenes anotadas y datos estructurados (JSON/CSV), manteniendo identificadores de seguimiento (*tracking*) consistentes a lo largo de los fotogramas de vídeo.
+
+## Resultados visuales
+
+El sistema aísla el vehículo, localiza la placa y extrae el texto con alta confianza, exportando la evidencia visual junto con un *payload* estructurado listo para integrarse en bases de datos o servicios backend.
+
+**Procesamiento de imagen:**
+![Detección Visual LPR](result_aut.png)
+
+**Salida estructurada (JSON):**
+![Salida JSON estructurada](json_resp.jpg)
+
+
+> [ ¡¡IMPORTANTE!! ]  
+> **Modelos requeridos para ejecución**  
+> Para que el pipeline funcione correctamente, es estrictamente necesario contar con los pesos locales de la red neuronal (`Modelos/yolov8n.pt` de Ultralytics para detección de vehículos y `Modelos/plate.pt` para la extracción de placas (custom model) ).  
+>  
+> **¿Quieres probar el código?** Si necesitas los modelos entrenados para correr tus propias pruebas o implementaciones, envíame un mensaje directo a través de mi [LinkedIn (javm-11-dev)](https://www.linkedin.com/in/javm-11-dev/) o un correo a jorgearmandovicente@gmail.com y con gusto te los comparto.
 
 ## Uso rápido
 
